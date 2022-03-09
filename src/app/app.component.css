@@ -1,0 +1,19 @@
+
+#header {
+    padding: 8px 8px 8px 16px;
+    background-color:rgb(219, 240, 179);
+    position: sticky;
+    top: 0px;
+}
+
+#content {
+}
+
+#footer {
+    font-size: 12px;
+    padding: 8px 16px;
+}
+
+#rights-reserved {
+    font-size: 10px;
+}

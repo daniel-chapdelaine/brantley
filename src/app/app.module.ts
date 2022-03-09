@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
 
 
 import { AppComponent } from './app.component';
@@ -15,8 +14,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     MatButtonModule,
-    MatIconModule,
-    MatToolbarModule
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

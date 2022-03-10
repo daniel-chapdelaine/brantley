@@ -67,11 +67,13 @@
 }
 
 #footer {
+    margin-top: 8px;
     font-size: 12px;
     padding: 8px 16px;
     bottom: 0px;
     background-color: #fffff2;
     box-sizing: border-box;
+    position: relative;
 }
 
 #rights-reserved {
@@ -114,9 +116,7 @@
 
 }
 
-$numberOfElements: 3; 
 $fontSize: 12px;
-
 
 .frame {
     position: absolute;
@@ -145,18 +145,14 @@ $fontSize: 12px;
     .change_outer {
         position: absolute;
         top: 0;
-        left: 25%; // fix positoing
-        // text-align: left;
+        left: 0;
+        right: 0;
         height: $fontSize * 1.5;
         overflow: hidden;
 
         .change_inner {
             position: relative;
-            animation: rotate 8s ease-in-out infinite;
-        }
-
-        .element {
-            display: block;
+            animation: rotate 10s ease-in-out infinite;
         }
 
     }
@@ -164,19 +160,19 @@ $fontSize: 12px;
 }
 
 @keyframes rotate {
-0%, 20% {
-transform: translateY(0);
-}
-25%,45% {
-transform: translateY($fontSize * -1.5);
-}
-50%,70% {
-transform: translateY($fontSize * -3);
-}
-75%,95% {
-transform: translateY($fontSize * -4.5);
-}
-100% {
-transform: translateY($fontSize * -6);
-}
+    0%, 20% {
+        transform: translateY(0);
+    }
+    25%,45% {
+        transform: translateY($fontSize * -1.5);
+    }
+    50%,70% {
+        transform: translateY($fontSize * -3);
+    }
+    75%,95% {
+        transform: translateY($fontSize * -4.5);
+    }
+    100% {
+        transform: translateY($fontSize * -6);
+    }
 }

@@ -69,31 +69,61 @@
   <div class="section">
     <ng-container [ngTemplateOutlet]="sectionTitle" [ngTemplateOutletContext]="{title:'Pricing and Hours'}"></ng-container>
     <div>
-        Pricing
-        30 minutes	
-        $65
-        60 minutes	
-        $100
-        90 minutes	
-        $130
-        120 minutes	
-        $170
-  
-        
-        Hours of Service
-        Sunday
-        and
-        Monday	
-        No Appointments
-        Currently Available
-  
-        Tuesday through
-        Saturday	
-        Appointments
-        Available From
-        9:00am to 6:00pm
-        Massage By Appointment Only
+      <div class="sub-title">Pricing</div>
+      <div class="row">
+        <div>30 minutes</div> 
+        <div>$65</div>
+      </div>
+      <div class="row">
+        <div>60 minutes</div> 
+        <div>$100</div>
+      </div>
+      <div class="row">
+        <div>90 minutes</div> 
+        <div>$130</div>
+      </div>
+      <div class="row">
+        <div>120 minutes</div> 
+        <div>$170</div>
+      </div>
     </div>
+  </div>
+
+  <div></div>
+
+  <div class="section">
+    <div class="sub-title">Hours of Service</div>
+    <div class="row">
+      <div>Sunday</div> 
+      <div>Closed</div>
+    </div>
+    <div class="row">
+      <div>Monday</div> 
+      <div>Closed</div>
+    </div>
+    <div class="row">
+      <div>Tuesday</div> 
+      <div>9:00am - 6:00pm</div>
+    </div>
+    <div class="row">
+      <div>Wednesday</div> 
+      <div>9:00am - 6:00pm</div>
+    </div>
+    <div class="row">
+      <div>Thursday</div> 
+      <div>9:00am - 6:00pm</div>
+    </div>
+    <div class="row">
+      <div>Friday</div> 
+      <div>9:00am - 6:00pm</div>
+    </div>
+    <div class="row">
+      <div>Saturday</div> 
+      <div>9:00am - 6:00pm</div>
+    </div> 
+    
+    <div id="appointment-only">Massage By Appointment Only</div>
+    
   </div>
 
 </div>

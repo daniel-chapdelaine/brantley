@@ -24,7 +24,7 @@
     color: #403d37;
 }
 
-#content > div:not(#banner) { 
+.section { 
     margin: 0px auto;
     max-width: 600px;
     padding: 16px 36px 0px 36px;
@@ -114,6 +114,23 @@
     font-weight: 600;
     margin-bottom: 4px;
 
+}
+
+.row {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    min-width: 300px;
+    margin-bottom: 4px;
+}
+
+#appointment-only {
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    font-weight: 600;
+    margin-top: 12px;
 }
 
 $fontSize: 12px;

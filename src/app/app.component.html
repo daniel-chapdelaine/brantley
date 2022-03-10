@@ -30,7 +30,7 @@
 <div id="content" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
 
   <div class="section">
-    <div class="section-title">Welcome!</div>
+    <ng-container [ngTemplateOutlet]="sectionTitle" [ngTemplateOutletContext]="{title:'Welcome'}"></ng-container>
     <div class="section-body">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing</div>
   </div>
 
@@ -39,19 +39,21 @@
   </div>
 
   <div class="section">
-    <div class="section-title">Services</div>
+    <ng-container [ngTemplateOutlet]="sectionTitle" [ngTemplateOutletContext]="{title:'Services'}"></ng-container>
     <div class="section-body">
-      Therapeutic
-      Through a combination of several styles, our technicians utilize your body's responses to guide their caring hands to provide the level of therapeutic touch your muscles require. By pulling from a variety of styles, like deep tissue, reflexology, gentle touch, and aromatherapy, we are able to release the tension within your body in a manner which best suits your needs.
-      
-      Prenatal
-      Special care is provided during this joyous time of a woman's life, as we provide therapeutic work to your body. As your body goes through dramatic changes, a prenatal massage can help ease the body's tensions and help increase or enhance the functions of the muscles and joints, improve circulation and general body tone, and relieve mental and physical fatigue.
+      <div class="sub-section">
+        <div class="sub-title">Therapeutic</div>
+        Through a combination of several styles, our technicians utilize your body's responses to guide their caring hands to provide the level of therapeutic touch your muscles require. By pulling from a variety of styles, like deep tissue, reflexology, gentle touch, and aromatherapy, we are able to release the tension within your body in a manner which best suits your needs.
+      </div>
+      <div class="sub-section">
+        <div class="sub-title">Prenatal</div>
+        Special care is provided during this joyous time of a woman's life, as we provide therapeutic work to your body. As your body goes through dramatic changes, a prenatal massage can help ease the body's tensions and help increase or enhance the functions of the muscles and joints, improve circulation and general body tone, and relieve mental and physical fatigue.
+      </div>
     </div>
   </div>
 
   <div class="section">
-    <p><span>underline is red, text is black</span></p>
-    <div class="section-title"> Pricing and Hours</div>
+    <ng-container [ngTemplateOutlet]="sectionTitle" [ngTemplateOutletContext]="{title:'Pricing and Hours'}"></ng-container>
     <div>
         Pricing
         30 minutes	
@@ -94,3 +96,12 @@
   <div>Nashville, TN | Call or Text <a href="tel:+1-615-481-4826">615-481-4826</a></div>
   <div id="rights-reserved">©2006-{{year}} James Brantley LMT - all rights reserved</div>
 </div>
+
+
+<ng-template #sectionTitle let-title='title'>
+  <div class="section-title-container" style="display: flex; justify-content: center; align-items: center; gap: 12px;">
+    <mat-icon class="section-title-icon-left">spa</mat-icon>
+    <div class="section-title">{{title}}</div>
+    <mat-icon class="section-title-icon-right">spa</mat-icon>
+  </div>
+</ng-template>

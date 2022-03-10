@@ -67,7 +67,28 @@
     margin: 2px auto;
 }
 
+.section-title-container {
+    padding-bottom: 8px;
+}
+
 .section-title {
     font-size: 18px;
-    padding-bottom: 4px;
+}
+
+.section-title-icon-left {
+    transform: scale(.8) rotate(-90deg);
+}
+
+.section-title-icon-right {
+    transform: scale(.8) rotate(90deg)
+}
+
+.sub-section {
+    margin-bottom: 8px;
+}
+
+.sub-title {
+    font-weight: 600;
+    margin-bottom: 4px;
+
 }

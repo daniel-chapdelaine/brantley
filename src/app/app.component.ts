@@ -1,23 +1,25 @@
 import { Component, HostBinding, OnInit, ViewEncapsulation } from '@angular/core';
-// import {
-//   BreakpointObserver,
-//   BreakpointState
-// } from '@angular/cdk/layout';
+import {
+  BreakpointObserver,
+  BreakpointState
+} from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
   
   @HostBinding('class') classes = 'app-container';
 
+  showFullFooterList = false;
   isMobileUser = false;
+  isMobileSize = false;
   year = new Date().getFullYear()
 
-  constructor() {}
+  constructor(public breakpointObserver: BreakpointObserver) {}
 
   ngOnInit() {
     const ua = navigator.userAgent;
@@ -26,18 +28,27 @@ export class AppComponent implements OnInit {
     } else {
       this.isMobileUser = false;
     }
-    console.log(this.isMobileUser);
-    
-    // console.log()
-    // this.breakpointObserver
-    //   .observe(['(min-width: 500px)'])
-    //   .subscribe((state: BreakpointState) => {
-    //     if (state.matches) {
-    //       console.log('Viewport width is 500px or greater!');
-    //     } else {
-    //       console.log('Viewport width is less than 500px!');
-    //     }
-    //   });
+    this.breakpointObserver
+      .observe(['(min-width: 600px)'])
+      // .pipe(takeUntil)
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.isMobileSize = false;
+        } else {
+          this.isMobileSize = true;
+        }
+      });
+
+    this.breakpointObserver
+      .observe(['(min-width: 900px)'])
+       // .pipe(takeUntil)
+      .subscribe((state: BreakpointState) => {
+        if (state.matches) {
+          this.showFullFooterList = true;
+        } else {
+          this.showFullFooterList = false;
+        }
+      });
   }
 
 }

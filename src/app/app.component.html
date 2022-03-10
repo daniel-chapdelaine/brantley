@@ -20,14 +20,17 @@
       </div>
   </div>
 
-  <div>
-    <button mat-icon-button aria-label="Show More"  [matMenuTriggerFor]="menu">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <mat-menu #menu="matMenu">
-      <button  mat-menu-item>Services</button>
-    </mat-menu>   
+  <div *ngIf="isMobileUser; else fullNumber" >
+    <a id="phone" mat-icon-button aria-label="Call or Text" href="tel:+1-615-481-4826" >
+      <mat-icon>phone</mat-icon>
+    </a>
   </div>
+  <ng-template #fullNumber>
+    <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
+      <div *ngIf="!isMobileSize">Nashville, TN | Call or Text</div>
+      <a href="tel:+1-615-481-4826">615-481-4826</a>
+    </div>
+  </ng-template>
 </div>
 
 <div id="content" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
@@ -38,7 +41,15 @@
   </div>
 
   <div id="banner" style="display: flex; justify-content: center; align-items: center;">
-    <a id="phone-btn" href="tel:+1-615-481-4826">Call or text for appointments </a>
+    <div *ngIf="isMobileUser; else callStatement" >
+      <a id="phone-btn" href="tel:+1-615-481-4826">Call or text for appointments </a>
+    </div>
+    <ng-template #callStatement>
+      <div id="phone-box" style="display: flex; justify-content: center; align-items: center; gap: 4px;">
+        <div>Call or text</div>
+        <a href="tel:+1-615-481-4826">615-481-4826</a>
+      </div>
+    </ng-template>
   </div>
 
   <div class="section">
@@ -85,16 +96,38 @@
     </div>
   </div>
 
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
-    <div>THERAPEUTIC MASSAGE SINCE 1990</div> 
-    <div>OUT CALLS ONLY</div>
-    <div>GIFT CERTIFICATES AVAILABLE</div>
-  </div>
 </div>
 
-<div class="divider"></div>
+
 
 <div id="footer" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px;">
+
+  <div *ngIf="showFullFooterList" style="display: flex; justify-content: space-evenly; align-items: center; gap: 8px; width: 90%;">
+    <div style="display: flex; justify-content: space-evenly; align-items: center; width: 33%">OUT CALLS ONLY</div>
+    <div style="display: flex; justify-content: space-evenly; align-items: center; width: 33%">THERAPEUTIC MASSAGE SINCE 1990</div> 
+    <div style="display: flex; justify-content: space-evenly; align-items: center; width: 33%">GIFT CERTIFICATES AVAILABLE</div>
+  </div>
+
+  <div *ngIf="!showFullFooterList" style="display: flex; justify-content: space-evenly; align-items: center; gap: 8px; width: 90%;">
+
+    <div class="frame">
+      <div class="center">
+        <div class="carousel">
+          <div class="change_outer">
+            <div class="change_inner">
+              <div class="element">OUT CALLS ONLY</div>
+              <div class="element">THERAPEUTIC MASSAGE SINCE 1990</div> 
+              <div class="element">GIFT CERTIFICATES AVAILABLE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="divider"></div>
+
   <div>HEALING TOUCH IN GREATER NASHVILLE</div>
   <div>Nashville, TN | Call or Text <a href="tel:+1-615-481-4826">615-481-4826</a></div>
   <div id="rights-reserved">©2006-{{year}} James Brantley LMT - all rights reserved</div>

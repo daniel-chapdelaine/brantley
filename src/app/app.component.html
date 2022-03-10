@@ -21,9 +21,12 @@
   </div>
 
   <div>
-    <button mat-icon-button aria-label="Show More">
+    <button mat-icon-button aria-label="Show More"  [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
+    <mat-menu #menu="matMenu">
+      <button  mat-menu-item>Services</button>
+    </mat-menu>   
   </div>
 </div>
 

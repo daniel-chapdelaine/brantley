@@ -7,7 +7,9 @@ import { Component, HostBinding, ViewEncapsulation } from '@angular/core';
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
-  @HostBinding('class') classes = 'app-container';
   
+  @HostBinding('class') classes = 'app-container';
+
   year = new Date().getFullYear()
+
 }

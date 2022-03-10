@@ -76,11 +76,11 @@
 }
 
 .section-title-icon-left {
-    transform: scale(.8) rotate(-90deg);
+    transform: scale(.7) rotate(-90deg);
 }
 
 .section-title-icon-right {
-    transform: scale(.8) rotate(90deg)
+    transform: scale(.7) rotate(90deg)
 }
 
 .sub-section {

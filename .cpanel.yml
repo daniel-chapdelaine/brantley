@@ -2,4 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/jbmas2/test/
-    - /home/jbmas2/repositories/brantley/dist/brantley index.html $DEPLOYPATH
+    - /dist/brantley index.html $DEPLOYPATH

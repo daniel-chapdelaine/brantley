@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/jbmas2/test
-    - ng build --prod
-    - /dist/brantley -R * $DEPLOYPATH
+    - export DEPLOYPATH=/home/jbmas2/test/
+    - npm run build 
+    - /dist/brantley index.html $DEPLOYPATH

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #fffff2;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+button {
+    background-color:rgb(219, 240, 179);
+    color: black;
+}
+
+a {
+    color: #4e2625;
+}
+
+a#phone.mat-icon-button {
+    background-color: rgba(64, 61, 55, .1) !important;
+}

@@ -26,7 +26,7 @@
   </div>
   <ng-template #fullNumber>
     <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
-      <div *ngIf="!isMobileSize">Nashville, TN | Call or Text</div>
+      <div *ngIf="!isMobileSize">Nashville, TN | Text or call</div>
       <a href="tel:+1-615-481-4826">615-481-4826</a>
     </div>
   </ng-template>
@@ -36,16 +36,18 @@
 
   <div class="section">
     <ng-container [ngTemplateOutlet]="sectionTitle" [ngTemplateOutletContext]="{title:'Welcome'}"></ng-container>
-    <div class="section-body">is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing</div>
+    <!-- <div class="section-body">
+      is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
+    </div> -->
   </div>
 
   <div id="banner" style="display: flex; justify-content: center; align-items: center;">
     <div *ngIf="isMobileUser; else callStatement" >
-      <a id="phone-btn" href="tel:+1-615-481-4826">Call or text for appointments </a>
+      <a id="phone-btn" href="tel:+1-615-481-4826">Text or call for appointments </a>
     </div>
     <ng-template #callStatement>
       <div id="phone-box" style="display: flex; justify-content: center; align-items: center; gap: 4px;">
-        <div>Call or text</div>
+        <div>Text or call</div>
         <a href="tel:+1-615-481-4826">615-481-4826</a>
       </div>
     </ng-template>
@@ -159,7 +161,7 @@
 
   <div>HEALING TOUCH IN GREATER NASHVILLE</div>
   
-  <div>Nashville, TN | Call or Text <a href="tel:+1-615-481-4826">615-481-4826</a></div>
+  <div>Nashville, TN | Text or call <a href="tel:+1-615-481-4826">615-481-4826</a></div>
   <div id="rights-reserved">©2006-{{year}} James Brantley LMT - all rights reserved</div>
 </div>
 

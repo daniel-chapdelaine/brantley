@@ -1,6 +1,5 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/jbmas2/test/
+    - npm install
     - npm run build 
-    - /dist/brantley index.html $DEPLOYPATH

@@ -14,7 +14,19 @@ When you're happy with the changes push the local branch code to github. Make a 
 
 ## Deployment
 
-Deployment was configured using a (cPanel Tutorial on How to use Push aka Automatic Dployment with Git)[https://www.youtube.com/watch?v=18tXFctuqQ0]
+Deployment was configured using a (cPanel Tutorial on How to use Push aka Manual Dployment with Git)[https://www.youtube.com/watch?v=hFyvGkE5zbQ]
 
 Steps: 
-1. Pull the Master branch to your local computer 
+1. Run `npm run build` on a local branch with your changes (not master), this will build the useable artifact in the dist/brantley dir.
+
+2. Push code to github and merge into master.
+
+3. Go to HostPapa -> cPanel -> git version control 
+
+4. Find brantley-repository and click manage
+
+5. Go to Pull or Deploy tab
+
+6. click Update from Remote and Verify your changes have been pulled 
+
+7. Click Deploy HEAD Commit

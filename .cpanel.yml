@@ -2,5 +2,6 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/jbmas2/test/
+    - rm -r $DEPLOYPATH/*
     - cd /home/jbmas2/repositories/brantley/dist/brantley
     - cp -r * $DEPLOYPATH

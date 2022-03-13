@@ -27,6 +27,8 @@ jobs:
       with:
         name: my_artifact_name # Upload artifact with name `dist`
         path: dist # Upload content of `dist` folder
+    - name: Debug Files
+      run: ls
         
   deploy:
     name: Deploy App
@@ -46,7 +48,6 @@ jobs:
           user: ${{ secrets.FTP_USERNAME }} # Ftp user Ex:
           password: ${{ secrets.FTP_PASSWORD }} # Ftp password Ex:
           host: ${{ secrets.FTP_SERVER }} # Ftp host Ex:
-          port: ${{ secrets.FTP_PORT }} # (optional) FTP port, defaults to 21
           path: dist # Folder to deploy Ex: apps/frontend/dist or dist
-          into: deploy_test # Where to place the files in your ftp
+          into: / # Where to place the files in your ftp
           cleanupExisting: true 

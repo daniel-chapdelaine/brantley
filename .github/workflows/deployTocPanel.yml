@@ -11,17 +11,14 @@ jobs:
     - uses: actions/checkout@v2.1.0
       with:
         fetch-depth: 2
-        
     - name: Use Node.js 14
       uses: actions/setup-node@v2
       with:
         node-version: '14'
-      
     - name: 🔨 Build Project
       run: |
         npm install
         npm run build
-        
     - name: Upload bundle
       uses: actions/upload-artifact@master
       with:
@@ -29,7 +26,6 @@ jobs:
         path: dist # Upload content of `dist` folder
     - name: Debug Files
       run: ls
-        
   deploy:
     name: Deploy App
     runs-on: [ubuntu-latest]
@@ -48,6 +44,6 @@ jobs:
           user: ${{ secrets.FTP_USERNAME }} # Ftp user Ex:
           password: ${{ secrets.FTP_PASSWORD }} # Ftp password Ex:
           host: ${{ secrets.FTP_SERVER }} # Ftp host Ex:
-          path: dist # Folder to deploy Ex: apps/frontend/dist or dist
+          path: dist/brantley # Folder to deploy Ex: apps/frontend/dist or dist
           into: / # Where to place the files in your ftp
           cleanupExisting: true 

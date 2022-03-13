@@ -1,3 +1,5 @@
+@use "sass:math";
+
 .app-container {
     width: 100%;
     height: 100%;
@@ -158,7 +160,7 @@ $fontSize: 12px;
     top: 50%;
     left: 0;
     right: 0;
-    margin-top: ($fontSize * 1.5) / -2;
+    margin-top: math.div(($fontSize * 1.5), -2);
 }
 
 .carousel {

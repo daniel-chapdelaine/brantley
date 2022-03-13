@@ -20,10 +20,14 @@
   </div>
 
   <div *ngIf="isMobileUser; else fullNumber" >
-    <a id="phone" mat-icon-button aria-label="Call or Text" href="tel:+1-615-481-4826" >
+    <a class="header-icons" mat-icon-button aria-label="Call" href="tel:+1-615-481-4826" >
       <mat-icon>phone</mat-icon>
     </a>
+    <a class="header-icons" mat-icon-button aria-label="Text" href="sms:+1-615-481-4826" >
+      <mat-icon>textsms</mat-icon>
+    </a>
   </div>
+
   <ng-template #fullNumber>
     <div style="display: flex; justify-content: center; align-items: center; gap: 4px;">
       <div *ngIf="!isMobileSize">Nashville, TN | Text or call</div>
@@ -43,7 +47,9 @@
 
   <div id="banner" style="display: flex; justify-content: center; align-items: center;">
     <div *ngIf="isMobileUser; else callStatement" >
-      <a id="phone-btn" href="tel:+1-615-481-4826">Text or call for appointments </a>
+      <div id="phone-btn">
+        <a  href="sms:+1-615-481-4826">Text</a> or <a href="tel:+1-615-481-4826">call</a> for appointments 
+      </div>
     </div>
     <ng-template #callStatement>
       <div id="phone-box" style="display: flex; justify-content: center; align-items: center; gap: 4px;">

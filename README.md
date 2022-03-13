@@ -1,6 +1,4 @@
-# Brantley
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+# JBmassage webpage
 
 ## Development server
 
@@ -14,7 +12,7 @@ When you're happy with the changes push the local branch code to github. Make a 
 
 ## Deployment
 
-Deployment was configured using a (cPanel Tutorial on How to use Push aka Manual Dployment with Git)[https://www.youtube.com/watch?v=hFyvGkE5zbQ]
+Deployment was configured using a [cPanel Tutorial on How to use Push aka Manual Dployment with Git](https://www.youtube.com/watch?v=hFyvGkE5zbQ)
 
 Steps: 
 1. Run `npm run build` on a local branch with your changes (not master), this will build the useable artifact in the dist/brantley dir.

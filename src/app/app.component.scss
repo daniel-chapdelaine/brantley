@@ -245,3 +245,22 @@ $fontSize: 12px;
 #gift-card-text {
     margin-top: 4px;
 }
+
+.cdk-overlay-container {
+    .mat-mdc-menu-content {
+        background: rgb(219, 240, 179, .2);
+    }
+
+    .mat-mdc-menu-item-text {
+        span {
+            font-family: "Josefin Sans", sans-serif;
+        }
+    }
+}
+
+#instagram-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}

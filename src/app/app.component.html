@@ -20,12 +20,29 @@
   </div>
 
   <div *ngIf="isMobileUser; else fullNumber" >
-    <a class="header-icons" mat-icon-button aria-label="Call" href="tel:+1-615-481-4826" >
-      <mat-icon>phone</mat-icon>
-    </a>
-    <a class="header-icons" mat-icon-button aria-label="Text" href="sms:+1-615-481-4826" >
-      <mat-icon>textsms</mat-icon>
-    </a>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Overflow menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu" >
+      <a mat-menu-item href="https://squareup.com/gift/Z4XY9Z9F46T2T/order" target="_blank">
+        <mat-icon>redeem</mat-icon>
+        <span>Purchase eGift cards</span>
+      </a>
+      <a mat-menu-item href="https://instagram.com/james_brantley_massage_therapy?utm_source=qr" target="_blank">
+        <span id="instagram-container">
+          <img src="/assets/instagram.svg" alt="instagram" width="24" height="24" style="margin-right: 16px;">
+          Follow us on instagram
+        </span>
+      </a>
+      <a mat-menu-item href="tel:+1-615-481-4826">
+        <mat-icon>phone</mat-icon>
+        <span>Call to book</span>
+      </a>
+      <a mat-menu-item href="sms:+1-615-481-4826">
+        <mat-icon>textsms</mat-icon>
+        <span>Text to book</span>
+      </a>
+    </mat-menu>
   </div>
 
   <ng-template #fullNumber>
@@ -36,18 +53,21 @@
   </ng-template>
 </div>
 
-<div id="content" style="display: flex; flex-direction: column; align-items: center; gap: 12px;">
+<div id="content" style="display: flex; flex-direction: column; align-items: center;">
+
+  <a *ngIf="!isMobileUser" id="gift-card" class="btn-container" href="https://squareup.com/gift/Z4XY9Z9F46T2T/order" target="_blank"> 
+    <mat-icon>redeem</mat-icon>
+    <span *ngIf="showFullGiftCardText" id="gift-card-text"> Purchase eGift cards</span>
+  </a>
+
 
   <div class="section">
     <ng-container [ngTemplateOutlet]="sectionTitle" [ngTemplateOutletContext]="{title:'Welcome'}"></ng-container>
-    <!-- <div class="section-body">
-      is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-    </div> -->
   </div>
 
   <div id="banner" style="display: flex; justify-content: center; align-items: center;">
     <div *ngIf="isMobileUser; else callStatement" >
-      <div id="phone-btn">
+      <div class="btn-container">
         <a  href="sms:+1-615-481-4826">Text</a> or <a href="tel:+1-615-481-4826">call</a> for appointments 
       </div>
     </div>
@@ -137,15 +157,17 @@
 
 
 
-<div id="footer" style="display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 4px;">
+<div id="footer" style="display: flex; flex-direction: column; align-items: center;">
 
-  <div *ngIf="showFullFooterList" style="display: flex; justify-content: space-evenly; align-items: center; gap: 8px; width: 90%;">
+  <div *ngIf="showFullFooterList" style="display: flex; justify-content: space-evenly; align-items: center; gap: 8px; width: 90%">
     <div style="display: flex; justify-content: space-evenly; align-items: center; width: 33%">OUT CALLS ONLY</div>
     <div style="display: flex; justify-content: space-evenly; align-items: center; width: 33%">THERAPEUTIC MASSAGE SINCE 1990</div> 
-    <div style="display: flex; justify-content: space-evenly; align-items: center; width: 33%">GIFT CERTIFICATES AVAILABLE</div>
+    <div style="display: flex; justify-content: space-evenly; align-items: center; width: 33%">eGIFT CARDS AVAILABLE</div>
   </div>
 
-  <div *ngIf="!showFullFooterList" style="display: flex; justify-content: space-evenly; align-items: center; gap: 8px; width: 90%;">
+  <div *ngIf="!showFullFooterList" 
+    id="footer-carousel-container"
+    style="display: flex; justify-content: space-evenly; align-items: center; gap: 8px;">
 
     <div class="frame">
       <div class="center">

@@ -14,6 +14,7 @@ export class AppComponent implements OnInit {
   
   @HostBinding('class') classes = 'app-container';
 
+  showFullGiftCardText = false;
   showFullFooterList = false;
   isMobileUser = false;
   isMobileSize = false;
@@ -34,8 +35,10 @@ export class AppComponent implements OnInit {
       .subscribe((state: BreakpointState) => {
         if (state.matches) {
           this.isMobileSize = false;
+          this.showFullGiftCardText = true;
         } else {
           this.isMobileSize = true;
+          this.showFullGiftCardText = false;
         }
       });
 

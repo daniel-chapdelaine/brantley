@@ -20,12 +20,23 @@
   </div>
 
   <div *ngIf="isMobileUser; else fullNumber" >
-    <a class="header-icons" mat-icon-button aria-label="Call" href="tel:+1-615-481-4826" >
-      <mat-icon>phone</mat-icon>
-    </a>
-    <a class="header-icons" mat-icon-button aria-label="Text" href="sms:+1-615-481-4826" >
-      <mat-icon>textsms</mat-icon>
-    </a>
+    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <a mat-menu-item href="https://squareup.com/gift/Z4XY9Z9F46T2T/order">
+        <mat-icon>redeem</mat-icon>
+        <span>Purchase gift cards</span>
+      </a>
+      <a mat-menu-item href="tel:+1-615-481-4826">
+        <mat-icon>phone</mat-icon>
+        <span>Call</span>
+      </a>
+      <a mat-menu-item href="sms:+1-615-481-4826">
+        <mat-icon>textsms</mat-icon>
+        <span>Text</span>
+      </a>
+    </mat-menu>
   </div>
 
   <ng-template #fullNumber>
@@ -38,9 +49,9 @@
 
 <div id="content" style="display: flex; flex-direction: column; align-items: center;">
 
-  <a id="gift-card" class="btn-container" href="https://squareup.com/gift/Z4XY9Z9F46T2T/order" target="_blank"> 
+  <a *ngIf="!isMobileUser" id="gift-card" class="btn-container" href="https://squareup.com/gift/Z4XY9Z9F46T2T/order" target="_blank"> 
     <mat-icon>redeem</mat-icon>
-    <span id="gift-card-text"> Purchase gift cards</span>
+    <span *ngIf="showFullGiftCardText" id="gift-card-text"> Purchase gift cards</span>
   </a>
 
 

@@ -22,7 +22,7 @@ $footer-height: 71px;
     background-color:$primary;
     box-shadow: 0px 4px 4px $body-shadow;
     width: 100%;
-    min-height: $header-height !important;
+    min-height: $header-height;
     box-sizing: border-box;
     z-index: 50;
 }
@@ -34,7 +34,9 @@ $footer-height: 71px;
     color: $text;
     padding-bottom: 12px;
     position: relative;
-    height: calc(100vh - 56px - 72px);
+    width: 100%;
+    height: calc(100vh - $header-height - $footer-height);
+    max-height: calc(100vh - $header-height - $footer-height);
 }
 
 .section { 

@@ -15,6 +15,7 @@ $footer-height: 71px;
     overflow: hidden;
     display: flex; 
     flex-direction: column;
+    position: relative;
 }
 
 #header {
@@ -33,10 +34,10 @@ $footer-height: 71px;
     overflow-x: hidden;
     color: $text;
     padding-bottom: 12px;
-    position: relative;
+    position: fixed;
+    top: $header-height;
+    bottom: $footer-height;
     width: 100%;
-    height: calc(100vh - $header-height - $footer-height);
-    max-height: calc(100vh - $header-height - $footer-height);
 }
 
 .section { 
@@ -89,6 +90,9 @@ $footer-height: 71px;
     height: $footer-height !important;
     box-shadow: 0px -4px 4px $body-shadow;
     box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    right: 0;
 }
 
 #footer-carousel-container {

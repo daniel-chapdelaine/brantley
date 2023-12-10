@@ -26,6 +26,7 @@ $footer-height: 71px;
     min-height: $header-height;
     box-sizing: border-box;
     z-index: 50;
+    position: fixed;
 }
 
 #content {
